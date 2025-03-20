@@ -16,6 +16,6 @@ spark = SparkSession.builder \
 
 data = spark.read.csv('/opt/airflow/data/Transform.csv', header=True, inferSchema=True)
 pandas_data = data.toPandas()
-client = MongoClient("mongodb+srv://adhirizqi1:perikitiw1603@cluster0.ft0r8.mongodb.net/")
+client = MongoClient("mongodb+srv://******:**********@cluster0.ft0r8.mongodb.net/")
 document_list = pandas_data.to_dict(orient='records')
 client['M3']['data'].insert_many(document_list)
